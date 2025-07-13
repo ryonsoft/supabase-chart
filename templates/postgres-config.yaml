@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  postgresql.conf: |
+    shared_preload_libraries = 'pg_net,pg_stat_statements'
+    log_min_messages = fatal
+kind: ConfigMap
+metadata:
+  name: postgres-config
