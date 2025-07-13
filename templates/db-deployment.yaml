@@ -135,5 +135,5 @@ spec:
             name: db-cm7
           name: db-cm7
         - name: db-config
-          persistentVolumeClaim:
-            claimName: db-config
+          configMap:
+            claimName: postgres-config
