@@ -87,6 +87,9 @@ spec:
               subPath: 99-pooler.sql
             - mountPath: /etc/postgresql-custom
               name: db-config
+            - name: postgres-config
+              mountPath: /etc/postgresql-custom
+              readOnly: true
       restartPolicy: Always
       volumes:
         - configMap:
@@ -135,5 +138,8 @@ spec:
             name: db-cm7
           name: db-cm7
         - name: db-config
+          persistentVolumeClaim:
+            claimName: db-config
+        - name: postgres-config
           configMap:
-            claimName: postgres-config
+            name: postgres-config
