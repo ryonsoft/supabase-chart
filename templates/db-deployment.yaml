@@ -28,7 +28,7 @@ spec:
             # - -c
             # - config_file=/etc/postgresql/postgresql.conf
             - -c
-            - log_min_messages=fatal
+            - config_file=/etc/postgresql-custom/postgresql.conf
           env:
             - name: JWT_EXP
               value: "3600"
@@ -37,7 +37,7 @@ spec:
             - name: PGDATABASE
               value: postgres
             - name: PGPASSWORD
-              value: your-super-secret-and-long-postgres-password
+              value: your-super-secret-and-long-postgres-passwordcd v
             - name: PGPORT
               value: "5432"
             - name: POSTGRES_DB
