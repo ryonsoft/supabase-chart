@@ -25,8 +25,6 @@ spec:
       containers:
         - args:
             - postgres
-            # - -c
-            # - config_file=/etc/postgresql/postgresql.conf
             - -c
             - config_file=/etc/postgresql-custom/postgresql.conf
           env:
@@ -37,7 +35,7 @@ spec:
             - name: PGDATABASE
               value: postgres
             - name: PGPASSWORD
-              value: your-super-secret-and-long-postgres-passwordcd v
+              value: your-super-secret-and-long-postgres-password
             - name: PGPORT
               value: "5432"
             - name: POSTGRES_DB
@@ -85,8 +83,6 @@ spec:
             - mountPath: /docker-entrypoint-initdb.d/migrations/99-pooler.sql
               name: db-cm7
               subPath: 99-pooler.sql
-            - mountPath: /etc/postgresql-custom
-              name: db-config
             - name: postgres-config
               mountPath: /etc/postgresql-custom
               readOnly: true
@@ -137,9 +133,6 @@ spec:
                 path: 99-pooler.sql
             name: db-cm7
           name: db-cm7
-        - name: db-config
-          persistentVolumeClaim:
-            claimName: db-config
         - name: postgres-config
           configMap:
             name: postgres-config
