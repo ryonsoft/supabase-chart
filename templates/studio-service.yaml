@@ -10,7 +10,3 @@ spec:
       targetPort: 3000
   selector:
     io.kompose.service: studio
-  sessionAffinity: None
-  type: ClusterIP
-status:
-  loadBalancer: {}
