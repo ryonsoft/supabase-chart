@@ -25,9 +25,9 @@ spec:
             - name: AUTH_JWT_SECRET
               value: your-super-secret-jwt-token-with-at-least-32-characters-long
             - name: DEFAULT_ORGANIZATION_NAME
-              value: Default Organization
+              value: Cybutek Organization
             - name: DEFAULT_PROJECT_NAME
-              value: Default Project
+              value: Cybutek Project
             - name: LOGFLARE_PRIVATE_ACCESS_TOKEN
               value: your-super-secret-and-long-logflare-key-private
             - name: LOGFLARE_URL
