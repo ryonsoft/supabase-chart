@@ -33,7 +33,7 @@ spec:
             - name: PGRST_DB_SCHEMAS
               value: public,storage,graphql_public
             - name: PGRST_DB_URI
-              value: postgres://authenticator:your-super-secret-and-long-postgres-password@db:5432/postgres
+              value: postgres://authenticator:your-super-secret-and-long-postgres-password@db.{{ .Release.Name }}:5432/postgres
             - name: PGRST_DB_USE_LEGACY_GUCS
               value: "false"
             - name: PGRST_JWT_SECRET
